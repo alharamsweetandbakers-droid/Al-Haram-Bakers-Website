@@ -16,7 +16,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
 
 <body>
@@ -106,7 +106,7 @@
 <!-- ================= ABOUT ================= -->
 
 <section class="about" id="about">
-
+<section class="about" id="about" data-aos="fade-up">
     <div class="about-container">
 
         <div class="about-image">
@@ -203,7 +203,7 @@
 <!-- ================= PRODUCTS ================= -->
 
 <section class="products" id="products">
-
+<section class="products" id="products" data-aos="fade-up">
 <div class="container">
 
 <div class="section-title">
@@ -267,7 +267,7 @@
 <!-- ================= GALLERY ================= -->
 
 <section class="gallery" id="gallery">
-
+<section class="gallery" id="gallery" data-aos="zoom-in">
     <div class="container">
 
         <div class="section-title">
@@ -299,7 +299,7 @@
 <!-- ================= BRANCHES ================= -->
 
 <section class="branches" id="branches">
-
+<section class="branches" id="branches" data-aos="fade-left">
     <div class="container">
 
         <div class="section-title">
@@ -360,7 +360,7 @@
 <!--================ CONTACT =================-->
 
 <section class="contact" id="contact">
-
+<section class="contact" id="contact" data-aos="fade-right">
 <div class="container">
 
 <div class="section-title">
@@ -429,7 +429,7 @@ YouTube
 <!-- =========================FOOTER========================== -->
 
 <footer id="footer">
-
+<footer data-aos="fade-up">
     <div class="footer-container">
 
         <!-- Logo -->
@@ -519,6 +519,15 @@ YouTube
     </div>
 
 </footer>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+    duration:1000,
+    once:true,
+    offset:120
+});
+</script>
 </body>
 
 </html>
