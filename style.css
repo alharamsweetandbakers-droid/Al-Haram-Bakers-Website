@@ -530,15 +530,6 @@ background:#128C7E;
 
 }
 
-@media(max-width:768px){
-
-.branch-grid{
-
-grid-template-columns:1fr;
-
-}
-
-}
 
 /*================ CONTACT =================*/
 
@@ -763,13 +754,13 @@ footer{
     gap:12px;
 }
 
-.social-links a{
+.footer-social-links a{
     color:#ddd;
     text-decoration:none;
     transition:.3s;
 }
 
-.social-links a:hover{
+.footer-social-links a:hover{
     color:#f7c66b;
 }
 
