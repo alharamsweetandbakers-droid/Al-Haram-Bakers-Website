@@ -757,7 +757,7 @@ footer{
     color:#f7c66b;
 }
 
-.social-links{
+.footer-social-links{
     display:flex;
     flex-direction:column;
     gap:12px;
