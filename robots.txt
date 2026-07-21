@@ -1,5 +1,4 @@
 User-agent: *
-
 Allow: /
 
-Sitemap: https://alharamsweetandbakers-droid.github.io/Al-Haram-Bakers-Website/sitemap.xml
+Sitemap: https://alharambakers.com/sitemap.xml
