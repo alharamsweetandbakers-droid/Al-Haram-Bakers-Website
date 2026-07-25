@@ -144,41 +144,7 @@ nav ul li a:hover{
  HERO SECTION
 ==================================*/
 
-.hero{
-
-    width:100%;
-
-    height:100vh;
-
-    background:url("images/hero.jpg") center center/cover no-repeat;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    margin-top:85px;
-
-}
-
-.hero-overlay{
-
-    width:100%;
-
-    height:100%;
-
-    background:rgba(0,0,0,.55);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-..hero-content{
+.hero-content{
 
     max-width:760px;
     width:90%;
@@ -200,9 +166,14 @@ nav ul li a:hover{
         0 15px 45px rgba(0,0,0,.40),
         inset 0 1px 0 rgba(255,255,255,.08);
 
+    text-align:center;
 }
 
+/* Text Colors */
+
 .hero-content h1{
+
+    color:#ffffff;   /* White */
 
     font-size:60px;
 
@@ -214,11 +185,13 @@ nav ul li a:hover{
 
 .hero-content h1 span{
 
-    color:#ffcc66;
+    color:#ffcc66;   /* Yellow */
 
 }
 
 .hero-content p{
+
+    color:#ffffff;   /* White */
 
     font-size:20px;
 
