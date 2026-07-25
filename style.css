@@ -140,9 +140,43 @@ nav ul li a:hover{
     color:#c68a2b;
 
 }
+
+
 /*==================================
  HERO SECTION
 ==================================*/
+.hero{
+
+    width:100%;
+    height:100vh;
+
+    background:url("images/hero.jpg") center center/cover no-repeat;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-top:85px;
+
+}
+
+.hero-overlay{
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.55);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
 
 .hero-content{
 
