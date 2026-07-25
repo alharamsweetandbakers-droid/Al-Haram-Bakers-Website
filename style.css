@@ -1013,21 +1013,50 @@ footer{
       HERO RESPONSIVE DESIGN
 ====================================*/
 
-/* Large Desktop */
+/* Base Hero Content (Desktop Default) */
+
+.hero-content{
+    width:650px;
+    max-width:90%;
+    padding:60px;
+    background:rgba(0,0,0,0.45);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    border-radius:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+/*==========================
+      Large Desktop
+==========================*/
+
 @media (max-width:1200px){
+
+    .hero-content{
+        width:600px;
+        padding:55px;
+    }
 
     .hero-content h1{
         font-size:52px;
-        line-height:65px;
+        line-height:64px;
     }
 
 }
 
-/* Laptop */
+/*==========================
+          Laptop
+==========================*/
+
 @media (max-width:992px){
 
     .hero{
         margin-top:75px;
+    }
+
+    .hero-content{
+        width:85%;
+        padding:50px;
     }
 
     .hero-content h1{
@@ -1042,64 +1071,64 @@ footer{
 
 }
 
-/* Tablet */
+/*==========================
+          Tablet
+==========================*/
+
 @media (max-width:768px){
 
     .hero{
-        height:auto;
         min-height:100vh;
-        padding:70px 20px;
+        height:auto;
+        padding:80px 20px;
+    }
+
+    .hero-content{
+        width:90%;
+        padding:40px 30px;
+        border-radius:28px;
     }
 
     .hero-content h1{
-
         font-size:36px;
-
         line-height:48px;
-
     }
 
     .hero-content p{
-
         font-size:17px;
-
         line-height:30px;
-
     }
 
     .hero-buttons{
-
+        display:flex;
         flex-direction:column;
-
         align-items:center;
-
+        gap:15px;
     }
 
     .btn,
     .btn2{
-
-        width:240px;
-
+        width:260px;
         text-align:center;
-
     }
 
 }
 
-//* Mobile */
+/*==========================
+          Mobile
+==========================*/
+
 @media (max-width:480px){
 
     .hero{
         padding:60px 15px;
     }
 
-    /* Black Content Box */
     .hero-content{
         width:95%;
         max-width:360px;
-        margin:auto;
         padding:35px 20px;
-        background:rgba(0,0,0,0.55);
+        background:rgba(0,0,0,.55);
         border-radius:25px;
     }
 
@@ -1124,6 +1153,27 @@ footer{
 
 }
 
+/*==========================
+      Small Mobile
+==========================*/
+
+@media (max-width:360px){
+
+    .hero-content{
+        padding:25px 15px;
+    }
+
+    .hero-content h1{
+        font-size:24px;
+        line-height:34px;
+    }
+
+    .hero-content p{
+        font-size:15px;
+        line-height:25px;
+    }
+
+}
 
 /*====================================
       ABOUT RESPONSIVE
