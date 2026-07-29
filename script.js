@@ -1,91 +1,118 @@
-/*=========================================
-        MOBILE NAVIGATION
-=========================================*/
+/*==================================================
+            WEBSITE JAVASCRIPT
+==================================================*/
+
+/*==================================================
+            MOBILE NAVIGATION
+==================================================*/
 
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 
-// Open / Close Menu
+if (menuToggle && navLinks) {
 
-menuToggle.addEventListener("click", (e) => {
+    /* Open / Close Menu */
 
-    e.stopPropagation();
+    menuToggle.addEventListener("click", (e) => {
 
-    navLinks.classList.toggle("active");
+        e.stopPropagation();
 
-});
+        navLinks.classList.toggle("active");
 
-// Close menu after clicking any link
-
-document.querySelectorAll("#nav-links a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        navLinks.classList.remove("active");
+        menuToggle.setAttribute(
+            "aria-expanded",
+            navLinks.classList.contains("active")
+        );
 
     });
 
-});
+    /* Close After Clicking Link */
 
-// Close when clicking outside
+    document.querySelectorAll("#nav-links a").forEach(link => {
 
-document.addEventListener("click", (e) => {
+        link.addEventListener("click", () => {
 
-    if (
-        !menuToggle.contains(e.target) &&
-        !navLinks.contains(e.target)
-    ) {
+            navLinks.classList.remove("active");
 
-        navLinks.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
 
-    }
+        });
 
-});
+    });
 
-// Close using ESC key
+    /* Click Outside */
 
-document.addEventListener("keydown", (e) => {
+    document.addEventListener("click", (e) => {
 
-    if (e.key === "Escape") {
+        if (
 
-        navLinks.classList.remove("active");
+            !menuToggle.contains(e.target) &&
+            !navLinks.contains(e.target)
 
-    }
+        ) {
 
-});
+            navLinks.classList.remove("active");
 
-// Close menu automatically on Desktop
+            menuToggle.setAttribute("aria-expanded", "false");
 
-window.addEventListener("resize", () => {
+        }
 
-    if (window.innerWidth > 992) {
+    });
 
-        navLinks.classList.remove("active");
+    /* ESC Key */
 
-    }
+    document.addEventListener("keydown", (e) => {
 
-});
+        if (e.key === "Escape") {
 
-/*=========================================
-        ACTIVE MENU LINK
-=========================================*/
+            navLinks.classList.remove("active");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+
+        }
+
+    });
+
+    /* Desktop Resize */
+
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 992) {
+
+            navLinks.classList.remove("active");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+
+        }
+
+    });
+
+}
+
+/*==================================================
+            ACTIVE NAVIGATION
+==================================================*/
 
 const sections = document.querySelectorAll("section");
 const navItems = document.querySelectorAll("#nav-links a");
 
-window.addEventListener("scroll", () => {
+function updateActiveMenu() {
 
-    let current = "";
+    let currentSection = "";
 
     sections.forEach(section => {
 
-        const sectionTop = section.offsetTop - 120;
-
+        const sectionTop = section.offsetTop - 140;
         const sectionHeight = section.offsetHeight;
 
-        if (pageYOffset >= sectionTop) {
+        if (
 
-            current = section.getAttribute("id");
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+
+        ) {
+
+            currentSection = section.id;
 
         }
 
@@ -95,7 +122,7 @@ window.addEventListener("scroll", () => {
 
         link.classList.remove("active-link");
 
-        if (link.getAttribute("href") === "#" + current) {
+        if (link.getAttribute("href") === "#" + currentSection) {
 
             link.classList.add("active-link");
 
@@ -103,4 +130,23 @@ window.addEventListener("scroll", () => {
 
     });
 
-});
+}
+
+window.addEventListener("scroll", updateActiveMenu);
+
+window.addEventListener("load", updateActiveMenu);
+
+/*==================================================
+        FUTURE PRODUCTS GALLERY
+==================================================*/
+
+/*
+    Future Version
+
+    Product Popup
+    Product Gallery
+    Product Slider
+    Product Details
+
+    JavaScript will be added here.
+*/
