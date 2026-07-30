@@ -1018,15 +1018,17 @@ nav ul li a.active-link::after{
 
 .gallery-item{
 
-    background:#fff;
-
     position:relative;
 
     overflow:hidden;
 
-    border-radius:22px;
+    isolation:isolate;
+
+    background:#fff;
 
     border:1px solid #f1e6d6;
+
+    border-radius:22px;
 
     box-shadow:0 12px 35px rgba(0,0,0,.08);
 
@@ -1043,8 +1045,8 @@ nav ul li a.active-link::after{
     border-color:#c68a2b;
 
     box-shadow:
-    0 25px 55px rgba(0,0,0,.18),
-    0 0 18px rgba(198,138,43,.20);
+        0 25px 55px rgba(0,0,0,.18),
+        0 0 18px rgba(198,138,43,.20);
 
 }
 
@@ -1056,11 +1058,13 @@ nav ul li a.active-link::after{
 
     position:relative;
 
-    overflow:hidden;
-
     width:100%;
 
     height:340px;
+
+    overflow:hidden;
+
+    display:block;
 
 }
 
@@ -1072,7 +1076,9 @@ nav ul li a.active-link::after{
 
     position:absolute;
 
-    inset:0;
+    top:0;
+
+    left:0;
 
     width:100%;
 
@@ -1086,19 +1092,19 @@ nav ul li a.active-link::after{
 
 /* Front Image */
 
-.img-front{
+.gallery-image .img-front{
 
     opacity:1;
 
     transform:scale(1);
 
-    z-index:1;
+    z-index:2;
 
 }
 
 /* Back Image */
 
-.img-back{
+.gallery-image .img-back{
 
     opacity:0;
 
@@ -1108,7 +1114,7 @@ nav ul li a.active-link::after{
 
 }
 
-/* Hover Swap */
+/* Hover Image Swap */
 
 .gallery-item:hover .img-front{
 
@@ -1139,22 +1145,17 @@ nav ul li a.active-link::after{
     inset:0;
 
     background:linear-gradient(
-
         to top,
-
         rgba(0,0,0,.75),
-
-        rgba(0,0,0,.15),
-
+        rgba(0,0,0,.18),
         transparent
-
     );
 
     opacity:0;
 
     transition:.45s;
 
-    z-index:2;
+    z-index:3;
 
 }
 
@@ -1183,15 +1184,10 @@ nav ul li a.active-link::after{
     height:100%;
 
     background:linear-gradient(
-
         120deg,
-
         transparent,
-
         rgba(255,255,255,.45),
-
         transparent
-
     );
 
     z-index:4;
@@ -1230,7 +1226,7 @@ nav ul li a.active-link::after{
 
     transform:translateY(40px);
 
-    transition:.45s;
+    transition:.45s ease;
 
 }
 
@@ -1263,7 +1259,6 @@ nav ul li a.active-link::after{
     color:#f3d7a1;
 
 }
-
 /*================ BRANCHES =================*/
 
 .branches{
