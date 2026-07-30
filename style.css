@@ -1698,6 +1698,29 @@ nav ul li a.active-link::after{
 
 }
 
+/*=========================================
+    MOBILE AUTO IMAGE CHANGE
+=========================================*/
+
+@media (hover:none){
+
+.gallery-item.show-back .img-front{
+
+    opacity:0;
+
+    transform:scale(1.08);
+
+}
+
+.gallery-item.show-back .img-back{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+}
 
 /*==================================================
                 CONTACT SECTION
