@@ -150,3 +150,35 @@ window.addEventListener("load", updateActiveMenu);
 
     JavaScript will be added here.
 */
+
+
+
+/*==================================================
+            SMOOTH SCROLL ANIMATION
+==================================================*/
+
+const links = document.querySelectorAll('a[href^="#"]');
+
+links.forEach(link => {
+
+    link.addEventListener("click", function(e){
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if(target){
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+
+                behavior:"smooth",
+
+                block:"start"
+
+            });
+
+        }
+
+    });
+
+});
