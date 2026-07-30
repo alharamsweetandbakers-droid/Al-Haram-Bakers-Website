@@ -182,3 +182,37 @@ links.forEach(link => {
     });
 
 });
+
+/*==================================================
+        MOBILE SCROLL IMAGE ANIMATION
+==================================================*/
+
+const galleryCards = document.querySelectorAll(".gallery-item");
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show-back");
+
+        } else {
+
+            entry.target.classList.remove("show-back");
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.5
+
+});
+
+galleryCards.forEach(card => {
+
+    observer.observe(card);
+
+});
