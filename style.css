@@ -1471,96 +1471,178 @@ nav ul li a.active-link::after{
     color:#f3d7a1;
 
 }
-/*================ BRANCHES =================*/
+/*==================================================
+                BRANCHES SECTION
+==================================================*/
 
 .branches{
-padding:90px 8%;
-background:#f8f8f8;
+
+    padding:100px 8%;
+
+    background:linear-gradient(to bottom,#f8f8f8,#ffffff);
+
 }
+
+/*==================================================
+                BRANCH GRID
+==================================================*/
 
 .branch-grid{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
 
-    gap:30px;
+    gap:35px;
 
 }
+
+/*==================================================
+                BRANCH CARD
+==================================================*/
 
 .branch-card{
 
     background:#fff;
 
+    border:1px solid #f1e6d6;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
     padding:30px;
-
-    border-radius:20px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-    transition:.35s ease;
-
-    height:100%;
 
     display:flex;
 
     flex-direction:column;
 
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+    transition:.45s;
+
 }
 
 .branch-card:hover{
 
-transform:translateY(-8px);
+    transform:translateY(-12px);
+
+    border-color:#c68a2b;
+
+    box-shadow:
+    0 25px 55px rgba(0,0,0,.18),
+    0 0 18px rgba(198,138,43,.20);
 
 }
+
+/*==================================================
+                TITLE
+==================================================*/
 
 .branch-card h3{
 
-color:#3b1f08;
+    color:#3b1f08;
 
-margin-bottom:15px;
+    font-size:28px;
 
-font-size:28px;
+    margin-bottom:18px;
+
+    transition:.35s;
 
 }
+
+.branch-card:hover h3{
+
+    color:#c68a2b;
+
+}
+
+/*==================================================
+                TEXT
+==================================================*/
 
 .branch-card p{
 
-margin:10px 0;
+    color:#666;
 
-font-size:17px;
+    font-size:16px;
 
-color:#555;
+    line-height:30px;
+
+    margin:8px 0;
 
 }
 
+.branch-card strong{
+
+    color:#3b1f08;
+
+}
+
+/*==================================================
+                BUTTONS
+==================================================*/
+
+.branch-btn,
+.map-btn{
+
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    padding:14px 25px;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    margin-top:18px;
+
+}
+
+/* WhatsApp */
+
 .branch-btn{
 
-display:inline-block;
+    background:#25D366;
 
-margin:20px 0;
-
-padding:14px 28px;
-
-background:#25D366;
-
-color:#fff;
-
-text-decoration:none;
-
-border-radius:40px;
-
-font-weight:bold;
-
-transition:.3s;
+    color:#fff;
 
 }
 
 .branch-btn:hover{
 
-background:#128C7E;
+    background:#128C7E;
+
+    transform:translateY(-3px);
 
 }
+
+/* Google Map */
+
+.map-btn{
+
+    background:#3b1f08;
+
+    color:#fff;
+
+}
+
+.map-btn:hover{
+
+    background:#c68a2b;
+
+    transform:translateY(-3px);
+
+}
+
+/*==================================================
+                GOOGLE MAP
+==================================================*/
 
 .branch-card iframe{
 
@@ -1570,9 +1652,49 @@ background:#128C7E;
 
     border:none;
 
-    border-radius:15px;
+    border-radius:18px;
 
-    margin-top:20px;
+    margin-top:25px;
+
+    transition:.35s;
+
+}
+
+.branch-card:hover iframe{
+
+    transform:scale(1.02);
+
+}
+
+/*==================================================
+                OPTIONAL DIVIDER
+==================================================*/
+
+.branch-card::after{
+
+    content:"";
+
+    width:70px;
+
+    height:4px;
+
+    background:#c68a2b;
+
+    border-radius:50px;
+
+    margin:25px auto 0;
+
+    opacity:.15;
+
+    transition:.35s;
+
+}
+
+.branch-card:hover::after{
+
+    width:120px;
+
+    opacity:1;
 
 }
 
@@ -2909,52 +3031,213 @@ footer{
     }
 
 }
-/*====================================
-      BRANCHES RESPONSIVE
-====================================*/
+/*==================================================
+            BRANCHES RESPONSIVE
+==================================================*/
+
+/*================ LAPTOP =================*/
 
 @media (max-width:992px){
 
     .branches{
-        padding:70px 20px;
+
+        padding:80px 20px;
+
     }
 
-}
-
-@media (max-width:768px){
-
     .branch-grid{
-        grid-template-columns:1fr;
+
+        grid-template-columns:repeat(2,1fr);
+
         gap:25px;
+
     }
 
     .branch-card{
+
         padding:25px;
+
     }
 
     .branch-card h3{
+
         font-size:24px;
+
     }
 
     .branch-card p{
+
         font-size:16px;
+
+        line-height:28px;
+
     }
 
-    .branch-btn{
-        width:100%;
-        text-align:center;
+    .branch-card iframe{
+
+        height:240px;
+
     }
 
 }
 
-@media (max-width:480px){
+/*================ TABLET =================*/
+
+@media (max-width:768px){
 
     .branches{
-        padding:60px 15px;
+
+        padding:70px 20px;
+
+    }
+
+    .branch-grid{
+
+        grid-template-columns:1fr;
+
+        gap:25px;
+
+    }
+
+    .branch-card{
+
+        padding:25px;
+
+        border-radius:18px;
+
+    }
+
+    .branch-card h3{
+
+        font-size:23px;
+
+    }
+
+    .branch-card p{
+
+        font-size:15px;
+
+        line-height:27px;
+
+    }
+
+    .branch-btn,
+    .map-btn{
+
+        width:100%;
+
+        padding:13px 20px;
+
+        font-size:15px;
+
     }
 
     .branch-card iframe{
+
+        height:230px;
+
+        border-radius:15px;
+
+    }
+
+}
+
+/*================ MOBILE =================*/
+
+@media (max-width:576px){
+
+    .branches{
+
+        padding:60px 15px;
+
+    }
+
+    .branch-grid{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+    .branch-card{
+
+        max-width:400px;
+
+        margin:auto;
+
+        padding:22px;
+
+    }
+
+    .branch-card h3{
+
+        font-size:21px;
+
+    }
+
+    .branch-card p{
+
+        font-size:15px;
+
+    }
+
+    .branch-btn,
+    .map-btn{
+
+        width:100%;
+
+        text-align:center;
+
+        font-size:15px;
+
+    }
+
+    .branch-card iframe{
+
         height:220px;
+
+    }
+
+}
+
+/*================ SMALL MOBILE =================*/
+
+@media (max-width:360px){
+
+    .branch-card{
+
+        padding:18px;
+
+    }
+
+    .branch-card h3{
+
+        font-size:19px;
+
+    }
+
+    .branch-card p{
+
+        font-size:14px;
+
+        line-height:24px;
+
+    }
+
+    .branch-btn,
+    .map-btn{
+
+        font-size:14px;
+
+        padding:12px 18px;
+
+    }
+
+    .branch-card iframe{
+
+        height:200px;
+
     }
 
 }
