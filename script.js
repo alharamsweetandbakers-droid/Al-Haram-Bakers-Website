@@ -184,35 +184,39 @@ links.forEach(link => {
 });
 
 /*==================================================
-        MOBILE SCROLL IMAGE ANIMATION
+        UNIVERSAL IMAGE SWAP ANIMATION
 ==================================================*/
 
-const galleryCards = document.querySelectorAll(".gallery-item");
+const imageCards = document.querySelectorAll(".image-swap");
 
-const observer = new IntersectionObserver((entries) => {
+if(imageCards.length){
 
-    entries.forEach(entry => {
+    const observer = new IntersectionObserver((entries)=>{
 
-        if (entry.isIntersecting) {
+        entries.forEach(entry=>{
 
-            entry.target.classList.add("show-back");
+            if(entry.isIntersecting){
 
-        } else {
+                entry.target.classList.add("show-back");
 
-            entry.target.classList.remove("show-back");
+            }else{
 
-        }
+                entry.target.classList.remove("show-back");
+
+            }
+
+        });
+
+    },{
+
+        threshold:0.35
 
     });
 
-}, {
+    imageCards.forEach(card=>{
 
-    threshold: 0.5
+        observer.observe(card);
 
-});
+    });
 
-galleryCards.forEach(card => {
-
-    observer.observe(card);
-
-});
+}
